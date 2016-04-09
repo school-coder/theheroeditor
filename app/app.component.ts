@@ -4,7 +4,8 @@ import {Component} from 'angular2/core';
     selector: 'my-app',
     template: '<h1>{{title}}</h1><h2>{{hero}}</h2>'
 })
+
 export class AppComponent { 
-	public title = "Tour of Heros ";
-	public hero = "windstm";
+	public title = "Tour of Heros";
+	public hero = "windstorm";
 }
