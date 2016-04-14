@@ -1,10 +1,7 @@
 import {Component} from 'angular2/core';
+import {Hero} from "./hero";
+import {HeroDetailComponent} from "./hero-detail.component";
 
-
-export class Hero {
-    id: number;
-    name: string;
-}
 
 var HEROES: Hero[] = [
     { "id": 11, "name": "Mr. Nice" },
@@ -22,16 +19,10 @@ var HEROES: Hero[] = [
 
 @Component({
     selector: 'my-app',
+    directives: [HeroDetailComponent],
     template: `
         <!-- Selected Hero details -->
-        <div *ngIf="selectedHero">
-            <h2>{{selectedHero.name}} details!</h2>
-            <div><label>id: </label>{{selectedHero.id}}</div>
-            <div>
-                <label>name: </label>
-                <input [(ngModel)]="selectedHero.name" placeholder="name"/>
-            </div>
-        </div>
+       <my-hero-detail [hero]="selectedHero"></my-hero-detail>
         <!-- List of heros -->
         <h2> My Heros </h2>
         <ul class="heroes">
